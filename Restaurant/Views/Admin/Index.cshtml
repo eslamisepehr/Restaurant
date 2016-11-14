@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "پنل ادمین";
+}
+
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        پنل ادمین
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed table-responsive">
+            <tr>
+
+                <th>
+                    <form action="/Admin/Order" method="post">
+                        <input class="img-responsive" type="image" alt="Submit" src="~/Content/Image/Panel/Order-2.png" />
+                        <p>رسیدگی به سفارشات پرداخت شده</p>
+                    </form>
+                </th>
+
+                <th>
+                    <form action="/Admin/Report" method="post">
+                        <input class="img-responsive" type="image" alt="Submit" src="~/Content/Image/Panel/Report.png" />
+                        <p>گزارشات</p>
+                    </form>
+                </th>
+                
+            </tr>
+        </table>
+        <hr />
+        <table class="table table-condensed table-responsive">
+            <h3 class="text-info">جزییات ریز تر</h3>
+            <tr>
+                <th>
+                    <form action="/Admin/OrderPanel" method="post">
+                        <input class="img-responsive" type="image" alt="Submit" src="~/Content/Image/Panel/Order-0.png" />
+                        <p>پنل مدیریت سفارشات</p>
+                    </form>
+                </th>
+
+                <th>
+                    <form action="/Admin/Panel/AFoods" method="post">
+                        <input class="img-responsive" type="image" alt="Submit" src="~/Content/Image/Panel/Food.png" />
+                        <p>پنل مدیریت غذا ها</p>
+                    </form>
+                </th>
+
+                <th>
+                    <form action="/Admin/UserPanel" method="post">
+                        <input class="img-responsive" type="image" alt="Submit" src="~/Content/Image/Panel/User-0.png" />
+                        <p>پنل مدیریت کاربران</p>
+                    </form>
+                </th>
+
+                <th>
+                    <form action="/Admin/Panel/ADiscountCodes" method="post">
+                        <input class="img-responsive" type="image" alt="Submit" src="~/Content/Image/Panel/DiscountCode.png" />
+                        <p>مدیریت کد های تخفیف</p>
+                    </form>
+                </th>
+            </tr>
+            <tr>
+
+                <th>
+                    <form action="/Admin/Panel/AInfo" method="post">
+                        <input class="img-responsive" type="image" alt="Submit" src="~/Content/Image/Panel/Restaurant-Info.png" />
+                        <p>تنظیمات سایت</p>
+                    </form>
+                </th>
+            </tr>
+        </table>
+
+    </div>
+</div>

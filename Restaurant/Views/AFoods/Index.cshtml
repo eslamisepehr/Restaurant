@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.Food>
+
+@{
+    ViewBag.Title = "غذا ها";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به پنل ادمین", "Index", "Admin")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        غذا ها
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                اینجا محلی برای جستوجو می باشد
+            </div>
+
+            <div class="panel-body">
+                <form action="/Admin/Panel/AFoods" method="post" class="form-inline">
+                    نام :
+                    <input type="text" name="Name" placeholder="نام" class="form-control" value="@ViewData["Name"]" />
+                    <input type="submit" value="جستوجو" class="btn btn-info" />
+                </form>
+            </div>
+        </div>
+        <hr />
+        <hr />
+        <p>
+            @Html.ActionLink("جدید", "Create")
+        </p>
+        <table class="table table-hover table-condensed table-responsive">
+            <tr class="active">
+                <th>
+                    نام غذا
+                </th>
+                <th>
+                    قیمت
+                </th>
+                <th>
+                    توضیحات
+                </th>
+                <th>
+                    عکس
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Describe)
+                    </td>
+                    <td>
+                        <img src="@item.Picture" style="width:38px;height:29px" />
+                    </td>
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("جزییات", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("حذف", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

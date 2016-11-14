@@ -1,0 +1,61 @@
+﻿@using Restaurant.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "ورود";
+}
+<div class="navbar">
+    <h2 class="navbar-right">@ViewBag.Title</h2>
+    <h2 class="navbar-left">@Html.ActionLink("ثبت نام", "Register")</h2>
+</div>
+<div class="panel-body">
+    <h4 class="text-danger">برای دسترسی به بخش های مختلف سایت باید وارد شوید!</h4><br />
+    <div class="row">
+        <div @*class="col-md-8"*@>
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <p class="text-info">لطفا ایمیل و گذرواژه خود را وارد نمایید.</p>
+                    <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Email, "ایمیل : ", new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, "گذرواژه : ", new { @class = "col-md-2 control-label" })
+                            <div class="col-md-10">
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <div class="checkbox">
+                                    @Html.CheckBoxFor(m => m.RememberMe)
+                                    @Html.Label("دخیره؟")
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="ورود" class="btn btn-default" />
+                            </div>
+                        </div>
+                        @Html.ActionLink("گذرواژه خود را فراموش کرده اید؟", "ForgotPassword", "Account")
+
+                        @* Enable this once you have account confirmation enabled for password reset functionality
+                            <p>
+                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                            </p>*@
+                }
+            </section>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

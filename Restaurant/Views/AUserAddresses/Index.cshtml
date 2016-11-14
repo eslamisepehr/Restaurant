@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.UserAddress>
+
+@{
+    ViewBag.Title = "آدرس ها";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به پنل مدیریت کاربران", "UserPanel", "Admin")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        آدرس ها
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                اینجا محلی برای جستوجو می باشد
+            </div>
+
+            <div class="panel-body">
+                <form action="/Admin/Panel/AUserAddresses" method="post" class="form-inline">
+                    ایمیل :
+                    <input type="text" name="Email" placeholder="ایمیل" class="form-control" value="@ViewData["Email"]" />
+                    شماره تماس : 
+                    <input type="text" name="PhoneNumber" value="@ViewData["PhoneNumber"]" placeholder="شماره تماس" class="form-control" />
+                    آدرس : 
+                    <textarea name="Address"  rows="1" wrap="soft" placeholder="آدرس" class="form-control">@ViewData["Address"]</textarea>
+                    <input type="submit" value="جستوجو" class="btn btn-info" />
+                </form>
+            </div>
+        </div>
+        <hr />
+        <hr />
+        <table class="table table-hover table-condensed table-responsive">
+            <tr class="active">
+                <th>
+                    ایمیل
+                </th>
+                <th>
+                    آدرس
+                </th>
+                <th>
+                    پلاک
+                </th>
+                <th>
+                    واحد
+                </th>
+                <th>
+                    طبقه
+                </th>
+                <th>
+                    شماره تماس
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Place)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Number)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Floor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telephone)
+                    </td>
+                    <td>
+                        @Html.ActionLink("جزییات", "Details", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

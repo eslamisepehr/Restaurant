@@ -1,0 +1,64 @@
+﻿@model Restaurant.Models.Entities.Food
+
+@{
+    ViewBag.Title = "حذف";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به لیست غذا ها", "Index")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        غذا ها
+    </div>
+    <div class="panel-body">
+        <h2>حذف</h2>
+        <hr />
+        <p class="text-danger">
+            آیا می خواهید این غذا را حذف کنید؟
+        </p>
+        <dl class="dl-horizontal">
+            <dt>
+                نام :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                قیمت :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                توضیحات :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Describe)
+            </dd>
+
+            <dt>
+                لینک عکس :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Picture)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="حذف" class="btn btn-danger" />
+            </div>
+        }
+    

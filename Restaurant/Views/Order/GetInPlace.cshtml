@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "دریافت در رستوران";
+}
+<hr />
+<div class="panel-heading text-center border_Title_Basket">
+    دریافت در رستوران
+</div>
+
+<hr />
+
+<div class="panel-heading border_Title_ContactUs text-center">
+    توجه : حداقل 20 دقیقه اضافه بر زمان هم اکنون در قسمت تاریخ و ساعت درج نمایید! در غیر این صورت درخواست شما تایید نخواهد شد!<br />
+    تعداد غذاهای درخواستی بر زمان تحویل سفارش تاثیر گذار است!<br />
+    شما می بایست در زمان تایین شده در رستوران حاظر شوید!
+</div>
+<hr />
+
+<div class="panel panel-info">
+    <div class="panel-heading">
+        تاریخ و ساعت درخواست برای دریافت سفارش را وارد نمایید.
+    </div>
+    <div class="panel-body">
+        <form action="/Order/Check" method="post" class="form-inline">
+            @Html.AntiForgeryToken()
+            تاریخ و ساعت : <input type="datetime-local" name="dateTime" value="@ViewData["DateTime"]" class="form-control" />
+            <input type="hidden" name="Way" value="3" />
+            <input type="submit" value="تایید" class="btn btn-success" />
+        </form>
+        <hr />
+        <p class="text-info">تاریخ و ساعت هم اکنون : @(DateTime.Now)</p>
+        <p class="text-primary">تاریخ و ساعت پیشنهادی : @((DateTime.Now).AddMinutes(20))</p>
+    </div>
+</div>

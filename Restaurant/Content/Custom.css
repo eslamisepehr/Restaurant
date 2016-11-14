@@ -1,0 +1,65 @@
+﻿.border_succeed {
+    border-right: 6px solid #27CBC0;
+    background-color: #ECF0F1;
+    height : 30px;
+    color : brown;
+    font-size :large;
+    padding-right : 10px;
+    text-align : right;
+}
+
+.border_Wrong {
+    border-right: 6px solid #CF000F;
+    background-color: #ECF0F1;
+    height : 30px;
+    color : darkred;
+    font-size :large;
+    padding-right : 10px;
+    text-align : right;
+}
+
+.border_Title{
+    background-color : #07ABA0;
+    color : white;
+    padding : 10px;
+    border-radius: 5px;
+}
+
+.border_Title_Basket{
+    background-color : #27CBC0;
+    color : white;
+    padding : 10px;
+    border-radius: 5px;
+    font-size : 20px;
+    text-align : justify center;
+
+}
+
+.border_Title_ContactUs{
+    background-color : #FF7416;
+    color : white;
+    padding : 10px;
+    border-radius: 5px;
+    font-size : 20px;
+    text-align :center;
+}
+
+.border_Title_Menu{
+    background-color : #C0392B;
+    color : white;
+    padding : 10px;
+    border-radius: 5px;
+    font-size : 20px;
+    text-align : justify center;
+
+}
+
+.text_area {
+    height: 200px;
+    word-wrap: normal;
+}
+
+.text_wrap{
+    width: auto;
+    word-wrap: break-word;
+}

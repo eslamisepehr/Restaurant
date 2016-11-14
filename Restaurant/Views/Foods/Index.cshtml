@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.Food>
+@{
+    ViewBag.Title = "لیست غذاها";
+}
+
+<h2 class="active text-center border_Title">لیست غذا ها</h2>
+@if (ViewBag.statusCount != null && ViewBag.statusFood != null)
+{
+    <p class="border_succeed">به تعداد @ViewBag.statusCount عدد غذای @ViewBag.statusFood به سبد خرید شما اضافه شد!</p>
+}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        اینجا محلی برای جستوجو می باشد
+    </div>
+
+    <div class="panel-body">
+        <form action="/Foods" method="get" class="form-inline">
+            نام غذا :
+            <input type="text" name="Search" placeholder="نام غذا" class="form-control" value="@ViewData["Search"]" />
+            <input type="submit" value="جستوجو" class="btn btn-info" />
+        </form>
+    </div>
+</div>
+<hr />
+<hr />
+@foreach (var item in Model)
+            {
+    <div class="panel panel-info">
+        <div class="panel-heading text-center">@Html.DisplayFor(modelItem => item.Name)</div>
+        <div class="panel-body">
+
+            <table class="table table-condensed table-bordered table-hover table-responsive table-striped" align="center">
+                <tr>
+                    <td class="col-lg-1" align="center">
+                        <img src="@item.Picture" style="width:304px;height:228px" />
+                    </td>
+                    <th class="text-center col-lg-5">
+                        <div class="text-primary">توضیحات :</div>
+
+                        <table>
+                            <tr>
+                                <td class="col-lg-1">
+                                    @Html.DisplayFor(modelItem => item.Describe)
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                    <th class="text-center col-lg-5">
+                        <div class="text-primary">خرید</div>
+
+                        <table>
+                            <tr>
+                                <td class="col-lg-1">
+                                    <div class="panel panel-info">
+                                        <div class="panel-body">
+                                            قیمت :   @Html.DisplayFor(modelItem => item.Price) تومان
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-info">
+                                        <div class="panel-body">
+                                            <form action="/Foods/Index" method="post">
+                                                <input type="text" name="Count" value="" placeholder="تعداد" class="form-control center-block " />
+                                                <textarea type="text" maxlength="100" name="Note" value="" placeholder="اگر نکته خاصی باید مطرح کنید اینجا بنویسید." class="form-control center-block "></textarea><br />
+                                                <input type="hidden" name="FoodId" value="@Html.DisplayFor(modelItem => item.Id)" />
+                                                <input type="hidden" name="FoodName" value="@Html.DisplayFor(modelItem => item.Name)" />
+                                                <input type="submit" class="btn btn-primary btn_buy" value="افزودن به سبد" />
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+
+

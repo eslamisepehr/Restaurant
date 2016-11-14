@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c7c541b7ffc4e3c82196ab375aebc42" Name="Diagram1">
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.AspNetUserRole" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.AspNetUser" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.Courier" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.DiscountCode" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.Food" Width="1.5" PointX="6" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.GetInPlace" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.Info" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.Order" Width="1.5" PointX="6" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.OrderList" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.OrderStatu" Width="1.5" PointX="3.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.OrderType" Width="1.5" PointX="3.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.RestaurantTable" Width="1.5" PointX="11.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="eslamise_RestaurantModel.UserAddress" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_AspNetUserRoles_AspNetUsers1" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_Courier_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_GetInPlace_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_Order_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_OrderList_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_RestaurantTable_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_UserAddress_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_Courier_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_Courier_UserAddress" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_OrderList_Foods" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_GetInPlace_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_Order_OrderType" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_OrderList_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="eslamise_RestaurantModel.FK_RestaurantTable_Order" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

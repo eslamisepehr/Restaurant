@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.Info>
+@{
+    ViewBag.Title = "صفحه اصلی";
+}
+
+@foreach (var item in Model)
+{
+    <hr />
+    <img class="img-responsive img-thumbnail" src="@item.PictureLink" />
+
+    <hr />
+    <div class="panel panel-heading border_Title_Menu text-center">
+        <a style="color:#fff;" href="~/Foods">لیست غذا ها</a>
+    </div>
+
+    <div class="panel">
+        <div class="panel-heading border_Title_Basket text-center">
+            درباره ما
+        </div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt class="text-primary">
+                    معرفی :
+                </dt>
+
+                <dd class="text-info">
+                    <p class="text_wrap">@item.About</p>
+                </dd>
+
+                <dt class="text-primary">
+                    ظرفیت :
+                </dt>
+
+                <dd class="text-info">
+                    @item.Count نفر
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+
+    <div class="panel">
+        <div class="panel-heading border_Title_ContactUs text-center">
+            @item.ContactUs
+        </div>
+    </div>
+}

@@ -1,0 +1,63 @@
+﻿@model Restaurant.Models.Entities.RestaurantTable
+
+@{
+    ViewBag.Title = "جزییات";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به لیست رزرو میز و صندلی", "Index")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        جزییات
+    </div>
+    <div class="panel-body">
+        <h2>جزییات</h2>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    ایمیل :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AspNetUser.Email)
+                </dd>
+
+                <dt>
+                    شماره سفارش :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Order.Id)
+                </dd>
+
+                <dt>
+                    تاریخ و ساعت سفارش :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Order.OrderDate)
+                </dd>
+
+                <dt>
+                    تاریخ و ساعت درخواست :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Order.Date)
+                </dd>
+
+                <dt>
+                    تعداد :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Count)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+

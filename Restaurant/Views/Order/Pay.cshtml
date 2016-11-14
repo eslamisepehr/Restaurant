@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "پرداخت";
+}
+<hr />
+<div class="panel-heading text-center border_Title_Basket">
+    پرداخت
+</div>
+<hr />
+@if (ViewBag.Message1 != null)
+{
+<div class="panel panel-success">
+    <div class="panel-heading">
+        موفق
+    </div>
+    <div class="panel-body">
+        <b class="text-success">@ViewBag.Message1</b>
+    </div>
+</div>
+}
+else
+{
+    <div class="panel panel-danger">
+        <div class="panel-heading">
+            خظا
+        </div>
+        <div class="panel-body">
+            <b class="text-danger">@ViewBag.Message2</b>
+        </div>
+    </div>
+}

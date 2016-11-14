@@ -1,0 +1,66 @@
+﻿@model Restaurant.Models.Entities.OrderList
+@{
+    ViewBag.Title = "حذف";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشتن به سبد خرید", "Index")
+</p>
+<hr />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        پاک کردن
+    </div>
+    <div class="panel-body">
+        <dl class="dl-horizontal">
+            <dt>
+                نام غذا : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Food.Name)
+            </dd>
+
+            <dt>
+                تعداد : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FoodCount)
+            </dd>
+
+            <dt>
+                تاریخ سفارش : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrderDate)
+            </dd>
+
+            <dt>
+                توضیحات : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Note)
+            </dd>
+
+            <dt>
+                وضیعت پرداخت :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IsPay)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="حذف" class="btn btn-danger" />
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,518 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{776553F2-86AB-4FF1-9505-3D554AFDDADF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Restaurant</RootNamespace>
+    <AssemblyName>Restaurant</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppManagers\Interfaces\IGeneralAppManager.cs" />
+    <Compile Include="AppManagers\MainModules\GeneralAppManager.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\Account\AccountController.cs" />
+    <Compile Include="Controllers\Admin\ACouriersController.cs" />
+    <Compile Include="Controllers\Admin\ADiscountCodesController.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Admin\AFoodsController.cs" />
+    <Compile Include="Controllers\Admin\AGetInPlacesController.cs" />
+    <Compile Include="Controllers\Admin\AInfoController.cs" />
+    <Compile Include="Controllers\Admin\AOrderListsController.cs" />
+    <Compile Include="Controllers\Admin\AOrdersController.cs" />
+    <Compile Include="Controllers\Admin\AOrderStatusController.cs" />
+    <Compile Include="Controllers\Admin\AOrderTypesController.cs" />
+    <Compile Include="Controllers\Admin\ARestaurantTablesController.cs" />
+    <Compile Include="Controllers\Admin\AUserAddressesController.cs" />
+    <Compile Include="Controllers\Admin\AUserRolesController.cs" />
+    <Compile Include="Controllers\Admin\AUsersController.cs" />
+    <Compile Include="Controllers\Api\BInfoController.cs" />
+    <Compile Include="Controllers\Api\BTrackController.cs" />
+    <Compile Include="Controllers\Api\BUserAccountController.cs" />
+    <Compile Include="Controllers\MainPage\HomeController.cs" />
+    <Compile Include="Controllers\Account\ManageController.cs" />
+    <Compile Include="Controllers\MainPage\FoodsController.cs" />
+    <Compile Include="Controllers\User\OrderController.cs" />
+    <Compile Include="Controllers\User\PanelController.cs" />
+    <Compile Include="Controllers\User\TrackController.cs" />
+    <Compile Include="Controllers\User\UserController.cs" />
+    <Compile Include="DbManagers\Interfaces\IDbManager.cs" />
+    <Compile Include="DbManagers\MainModules\CourierManager.cs" />
+    <Compile Include="DbManagers\MainModules\DiscountCodeManager.cs" />
+    <Compile Include="DbManagers\MainModules\FoodManager.cs" />
+    <Compile Include="DbManagers\MainModules\GetInPlaceManager.cs" />
+    <Compile Include="DbManagers\MainModules\InfoManager.cs" />
+    <Compile Include="DbManagers\MainModules\OrderListManager.cs" />
+    <Compile Include="DbManagers\MainModules\OrderManager.cs" />
+    <Compile Include="DbManagers\MainModules\OrderStatusManager.cs" />
+    <Compile Include="DbManagers\MainModules\OrderTypeManager.cs" />
+    <Compile Include="DbManagers\MainModules\RestaurantTableManager.cs" />
+    <Compile Include="DbManagers\MainModules\UserAddressManager.cs" />
+    <Compile Include="DbManagers\MainModules\UserManager.cs" />
+    <Compile Include="DbManagers\MainModules\UserRoles.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Api\Api_OrderList.cs" />
+    <Compile Include="Helper\Api\Api_RegisterValue.cs" />
+    <Compile Include="Helper\Api\Api_Track.cs" />
+    <Compile Include="Helper\Api\CApi.cs" />
+    <Compile Include="Helper\Api\Api_Info.cs" />
+    <Compile Include="Helper\Email.cs" />
+    <Compile Include="Helper\RoleName.cs" />
+    <Compile Include="Models\Entities\AspNetUser.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\AspNetUserRole.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Courier.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\DiscountCode.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\eslamise_Restaurant.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eslamise_Restaurant.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\eslamise_Restaurant.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\eslamise_Restaurant.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>eslamise_Restaurant.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Food.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\GetInPlace.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Info.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\Order.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\OrderList.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\OrderStatu.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\OrderType.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\RestaurantTable.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Entities\UserAddress.cs">
+      <DependentUpon>eslamise_Restaurant.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModels\AccountViewModels.cs" />
+    <Compile Include="Models\ViewModels\IdentityModels.cs" />
+    <Compile Include="Models\ViewModels\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Custom.css" />
+    <Content Include="Content\Image\Panel\DiscountCode.png" />
+    <Content Include="Content\Image\Panel\Focus.png" />
+    <Content Include="Content\Image\Panel\Food.png" />
+    <Content Include="Content\Image\Panel\Order-0.png" />
+    <Content Include="Content\Image\Panel\Order-1.png" />
+    <Content Include="Content\Image\Panel\Order-2.png" />
+    <Content Include="Content\Image\Panel\Order-List.png" />
+    <Content Include="Content\Image\Panel\Order-Status.png" />
+    <Content Include="Content\Image\Panel\Order-Type.png" />
+    <Content Include="Content\Image\Panel\Password.png" />
+    <Content Include="Content\Image\Panel\Report.png" />
+    <Content Include="Content\Image\Panel\Reservation-0.png" />
+    <Content Include="Content\Image\Panel\Reservation-Courier.png" />
+    <Content Include="Content\Image\Panel\Reservation-GetInPlace.png" />
+    <Content Include="Content\Image\Panel\Reservation-Table.png" />
+    <Content Include="Content\Image\Panel\Restaurant-Info.png" />
+    <Content Include="Content\Image\Panel\Track.png" />
+    <Content Include="Content\Image\Panel\User-0.png" />
+    <Content Include="Content\Image\Panel\User-1.png" />
+    <Content Include="Content\Image\Panel\User-Address.png" />
+    <Content Include="Content\Image\Panel\User-Role.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\BYekan.eot" />
+    <Content Include="fonts\BYekan.ttf" />
+    <Content Include="fonts\BYekan.woff" />
+    <Content Include="fonts\irsans.ttf" />
+    <EntityDeploy Include="Models\Entities\eslamise_Restaurant.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>eslamise_Restaurant.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Entities\eslamise_Restaurant.edmx.diagram">
+      <DependentUpon>eslamise_Restaurant.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\EsRestaurant.pubxml" />
+    <None Include="Properties\PublishProfiles\Restaurant.eslamisepehr.com - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Models\Entities\eslamise_Restaurant.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eslamise_Restaurant.edmx</DependentUpon>
+      <LastGenOutput>eslamise_Restaurant.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Entities\eslamise_Restaurant.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>eslamise_Restaurant.edmx</DependentUpon>
+      <LastGenOutput>eslamise_Restaurant.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Foods\Index.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Edit.cshtml" />
+    <Content Include="Views\Order\Delete.cshtml" />
+    <Content Include="Views\Order\Pay.cshtml" />
+    <Content Include="Views\Track\Index.cshtml" />
+    <Content Include="Views\Track\Details.cshtml" />
+    <Content Include="Views\Order\Check.cshtml" />
+    <Content Include="Views\Order\Courier.cshtml" />
+    <Content Include="Views\Order\Way.cshtml" />
+    <Content Include="Views\Order\ReserveTable.cshtml" />
+    <Content Include="Views\Order\GetInPlace.cshtml" />
+    <Content Include="Views\ACouriers\Details.cshtml" />
+    <Content Include="Views\ACouriers\Index.cshtml" />
+    <Content Include="Views\ADiscountCodes\Create.cshtml" />
+    <Content Include="Views\ADiscountCodes\Delete.cshtml" />
+    <Content Include="Views\ADiscountCodes\Details.cshtml" />
+    <Content Include="Views\ADiscountCodes\Edit.cshtml" />
+    <Content Include="Views\ADiscountCodes\Index.cshtml" />
+    <Content Include="Views\AFoods\Create.cshtml" />
+    <Content Include="Views\AFoods\Delete.cshtml" />
+    <Content Include="Views\AFoods\Details.cshtml" />
+    <Content Include="Views\AFoods\Edit.cshtml" />
+    <Content Include="Views\AFoods\Index.cshtml" />
+    <Content Include="Views\AGetInPlaces\Details.cshtml" />
+    <Content Include="Views\AGetInPlaces\Index.cshtml" />
+    <Content Include="Views\AInfo\Details.cshtml" />
+    <Content Include="Views\AInfo\Edit.cshtml" />
+    <Content Include="Views\AInfo\Index.cshtml" />
+    <Content Include="Views\AOrderLists\Details.cshtml" />
+    <Content Include="Views\AOrderLists\Edit.cshtml" />
+    <Content Include="Views\AOrderLists\Index.cshtml" />
+    <Content Include="Views\AOrders\Details.cshtml" />
+    <Content Include="Views\AOrders\Edit.cshtml" />
+    <Content Include="Views\AOrders\Index.cshtml" />
+    <Content Include="Views\OrderStatus\Create.cshtml" />
+    <Content Include="Views\OrderStatus\Delete.cshtml" />
+    <Content Include="Views\OrderStatus\Details.cshtml" />
+    <Content Include="Views\OrderStatus\Edit.cshtml" />
+    <Content Include="Views\OrderStatus\Index.cshtml" />
+    <Content Include="Views\ARestaurantTables\Details.cshtml" />
+    <Content Include="Views\ARestaurantTables\Index.cshtml" />
+    <Content Include="Views\AUserAddresses\Details.cshtml" />
+    <Content Include="Views\AUserAddresses\Index.cshtml" />
+    <Content Include="Views\AUsers\Create.cshtml" />
+    <Content Include="Views\AUsers\Delete.cshtml" />
+    <Content Include="Views\AUsers\Details.cshtml" />
+    <Content Include="Views\AUsers\Edit.cshtml" />
+    <Content Include="Views\AUsers\Index.cshtml" />
+    <Content Include="Views\AUserRoles\Edit.cshtml" />
+    <Content Include="Views\AUserRoles\Index.cshtml" />
+    <Content Include="Views\AOrderStatus\Create.cshtml" />
+    <Content Include="Views\AOrderStatus\Delete.cshtml" />
+    <Content Include="Views\AOrderStatus\Details.cshtml" />
+    <Content Include="Views\AOrderStatus\Edit.cshtml" />
+    <Content Include="Views\AOrderStatus\Index.cshtml" />
+    <Content Include="Views\AOrderTypes\Edit.cshtml" />
+    <Content Include="Views\AOrderTypes\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Admin\OrderPanel.cshtml" />
+    <Content Include="Views\Admin\UserPanel.cshtml" />
+    <Content Include="Views\Panel\Index.cshtml" />
+    <Content Include="Views\Panel\ChangePassword.cshtml" />
+    <Content Include="Views\Panel\Address.cshtml" />
+    <Content Include="Views\Panel\CreateAddress.cshtml" />
+    <Content Include="Views\Admin\Report.cshtml" />
+    <Content Include="Views\Admin\Order.cshtml" />
+    <Content Include="Views\Admin\OrderDetails.cshtml" />
+    <Content Include="Views\Panel\DeleteAddress.cshtml" />
+    <Content Include="Views\Panel\EditAddress.cshtml" />
+    <Content Include="Views\BUserAccount\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\SendConfirmEmail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6186</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:6188/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

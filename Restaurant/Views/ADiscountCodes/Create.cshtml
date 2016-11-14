@@ -1,0 +1,52 @@
+﻿@model Restaurant.Models.Entities.DiscountCode
+
+@{
+    ViewBag.Title = "جدید";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به لیست کد تخفیف", "Index")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        کد تخفیف
+    </div>
+    <div class="panel-body">
+        <h2>جدید</h2>
+        <hr />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("کد : ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("درصد : ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Persent, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Persent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="جدید" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+    </div>
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

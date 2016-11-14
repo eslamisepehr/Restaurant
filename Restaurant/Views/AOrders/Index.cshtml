@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.Order>
+
+@{
+    ViewBag.Title = "لیست سفارشات";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به پنل مدیریت سفارشات", "OrderPanel", "Admin")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        لیست سفارشات
+    </div>
+    <hr />
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            اینجا محلی برای جستوجو می باشد
+        </div>
+
+        <div class="panel-body">
+            <form action="/Admin/Panel/AOrders" method="post" class="form-inline">
+                ایمیل :
+                <input type="text" name="Email" placeholder="ایمیل" class="form-control" value="@ViewData["Email"]" /><hr />
+                تاریخ و ساعت ثبت :
+                <input type="datetime" name="OrderDate" placeholder="تاریخ و ساعت ثبت" class="form-control" value="@ViewData["OrderDate"]" />
+                تاریخ و ساعت درخواست :
+                <input type="datetime" name="Date" placeholder="تاریخ و ساعت درخواست" class="form-control" value="@ViewData["Date"]" />
+                <input type="submit" value="جستوجو" class="btn btn-info navbar-left" />
+            </form>
+        </div>
+    </div>
+    <hr />
+    <hr />
+
+    <div class="panel-body">
+        <table class="table table-hover table-condensed table-responsive">
+            <tr class="active">
+                <th>
+                    ایمیل
+                </th>
+                <th>
+                    مجموع قیمت
+                </th>
+                <th>
+                    وضیعت پرداخت
+                </th>
+                <th>
+                    کد تخفیف
+                </th>
+                <th>
+                    تاریخ و ساعت درخواست
+                </th>
+                <th>
+                    تاریخ و ساعت سفارش
+                </th>
+                <th>
+                    وضیعت سفارش
+                </th>
+                <th>
+                    نحوه دریافت
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isPay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiscountCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDate)
+                    </td>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderStatu.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderType.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("جزییات", "Details", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

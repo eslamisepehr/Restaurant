@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <meta charset="utf-8" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+    <meta name="viewport" content="width=1024, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="~/Content/Custom.css" rel="stylesheet" />
+</head>
+<body>
+    @*navbar navbar-inverse navbar-fixed-top*@
+    <div class="navbar navbar-inverse  navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("رستوران", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("لیست غذا ها", "Index", "Foods")</li>
+                    <li>@Html.ActionLink("سبد خرید", "Index", "Order")</li>
+                    <li>@Html.ActionLink("پیگیری سفارش", "Index", "Track")</li>
+                </ul>
+                <div class="navbar-collapse collapse navbar-left">
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div class="navbar-form">
+            <p class="navbar-left">@DateTime.Now</p>
+            <p class="navbar-right">&copy; @DateTime.Now.Year - توسعه داده شده توسط سپهر اسلامی</p>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

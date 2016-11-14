@@ -1,0 +1,78 @@
+﻿@model Restaurant.Models.Entities.OrderList
+
+@{
+    ViewBag.Title = "جزییات";
+}
+<p class="navbar-left">
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("برگشت به لیست جزییات تمام سفارشات", "Index")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        لیست تمام سفارشات
+    </div>
+    <div class="panel-body">
+        <h2>جزییات</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                ایمیل :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => modelItem.AspNetUser.Email)
+            </dd>
+
+            <dt>
+                نام غذا :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => modelItem.Food.Name)
+            </dd>
+
+            <dt>
+                تعداد :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => modelItem.FoodCount)
+            </dd>
+
+            <dt>
+                تاریخ :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => modelItem.OrderDate)
+            </dd>
+
+            <dt>
+                قیمت هر کدام :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => modelItem.Food.Price)
+            </dd>
+
+            <dt>
+                وضیعت پرداخت :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => modelItem.IsPay)
+            </dd>
+
+            <dt>
+                توضیحات :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(modelItem => modelItem.Note)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+

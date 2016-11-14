@@ -1,0 +1,78 @@
+﻿@model Restaurant.Models.Entities.Info
+
+@{
+    ViewBag.Title = "جزییات";
+}
+
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        جزییات
+    </div>
+    <div class="panel-body">
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    نام رستوران :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    ظرفیت رستوران :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Count)
+                </dd>
+
+                <dt>
+                    درباره ما :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.About)
+                </dd>
+
+                <dt>
+                    تماس با ما :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ContactUs)
+                </dd>
+
+                <dt>
+                    هزینه پیک :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ReserveCourierPrice)
+                </dd>
+
+                <dt>
+                    هزینه رزرو میز و صندلی :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ReserveTablePrice)
+                </dd>
+
+                <dt>
+                    لینک عکس رستوران :
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PictureLink)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("برگشت به تنظیمات سایت", "Index")
+</p>

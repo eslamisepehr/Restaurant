@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.AspNetUserRole>
+
+@{
+    ViewBag.Title = "دسترسی کاربران";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به پنل مدیریت کاربران", "UserPanel", "Admin")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        دسترسی کاربران
+    </div>
+    <div class="panel-body">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                اینجا محلی برای جستوجو می باشد
+            </div>
+
+            <div class="panel-body">
+                <form action="/Admin/Panel/AUserRoles" method="post" class="form-inline">
+                    ایمیل :
+                    <input type="text" name="Email" placeholder="ایمیل" class="form-control" value="@ViewData["Email"]" />
+                    <input type="submit" value="جستوجو" class="btn btn-info" />
+                </form>
+                <br />
+                <form action="/Admin/Panel/AUserRoles" method="post" class="form-inline">
+                    <input type="submit" name="Admin" value="نمایش ادمین ها" class="btn btn-success btn-sm" />
+                </form>
+            </div>
+        </div>
+        <hr />
+        <hr />
+
+        <table class="table table-hover table-condensed table-responsive">
+            <tr class="active">
+                <th>
+                    ایمیل
+                </th>
+                <th>
+                    دسترسی
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AspNetUser.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoleId)
+                    </td>
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.UserId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+</div>

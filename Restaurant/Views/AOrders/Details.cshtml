@@ -1,0 +1,87 @@
+﻿@model Restaurant.Models.Entities.Order
+
+@{
+    ViewBag.Title = "جزییات";
+}
+<p class="navbar-left">
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("برگشت به لیست سفارشات", "Index")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        لیست سفارشات
+    </div>
+    <div class="panel-body">
+        <h2>جزییات</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                ایمیل : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.Email)
+            </dd>
+
+            <dt>
+                مجموع قیمت : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalPrice)
+            </dd>
+
+            <dt>
+                وضیعت پرداخت : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.isPay)
+            </dd>
+
+            <dt>
+                کد تخفیف : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DiscountCode)
+            </dd>
+
+            <dt>
+                تاریخ و ساعت درخواست : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+            <dt>
+                تاریخ و ساعت سفارش : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrderDate)
+            </dd>
+            
+
+            <dt>
+                وضیعت سفارش : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrderStatu.Status)
+            </dd>
+
+            <dt>
+                نحوه دریافت : 
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OrderType.Name)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+

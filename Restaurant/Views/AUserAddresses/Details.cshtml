@@ -1,0 +1,69 @@
+﻿@model Restaurant.Models.Entities.UserAddress
+
+@{
+    ViewBag.Title = "جزییات";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به لیست آدرس ها", "Index")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        آدرس ها
+    </div>
+    <div class="panel-body">
+        <h2>جزییات</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                ایمیل :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.Email)
+            </dd>
+
+            <dt>
+                آدرس :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Place)
+            </dd>
+
+            <dt>
+                پلاک :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Number)
+            </dd>
+
+            <dt>
+                واحد :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Unit)
+            </dd>
+
+            <dt>
+                طبقه :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Floor)
+            </dd>
+
+            <dt>
+                شماره تماس :
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Telephone)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+

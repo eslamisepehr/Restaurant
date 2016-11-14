@@ -1,0 +1,29 @@
+﻿@model Restaurant.Models.Entities.OrderStatu
+
+@{
+    ViewBag.Title = "جزییات";
+}
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        وضیعت سفارش
+    </div>
+    <div class="panel-body">
+        <h2>جزییات</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("برگشت به لیست وضیعت سفارش", "Index")
+</p>

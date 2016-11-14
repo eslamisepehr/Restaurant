@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.OrderType>
+
+@{
+    ViewBag.Title = "نحوه دریافت سفارش";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به پنل مدیریت سفارشات", "OrderPanel","Admin")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        نحوه دریافت سفارش
+    </div>
+    <div class="panel-body">
+        <table class="table table-hover table-condensed table-responsive">
+            <tr class="active">
+                <th>
+                    نام
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

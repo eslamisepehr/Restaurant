@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "پنل کاربر";
+}
+
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        پنل کاربر
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed table-responsive">
+            <tr>
+                <th>
+                    <form action="/Panel/ChangePassword" method="post">
+                        <input type="image" alt="Submit" src="~/Content/Image/Panel/Password.png" />
+                        @Html.AntiForgeryToken()
+                        <p>تغییر گذرواژه</p>
+                    </form>
+                </th>
+
+                <th>
+                    <form action="/Panel/Address" method="post">
+                        <input type="image" alt="Submit" src="~/Content/Image/Panel/User-Address.png" />
+                        <p>مدیریت آدرس ها</p>
+                    </form>
+                </th>
+
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+

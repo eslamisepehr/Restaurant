@@ -1,0 +1,122 @@
+﻿
+@{
+    ViewBag.Title = "Report";
+}
+<p class="navbar-left">
+    @Html.ActionLink("برگشت به پنل ادمین", "Index")
+</p>
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        گزارشات
+    </div>
+    <div class="panel-body">
+
+        <hr />
+        <div class="panel panel-info">
+            <div class="panel-heading">سفارشات</div>
+            <div class="panel-body">
+                
+                <table class="table table-condensed table-responsive">
+                    <tr>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کل سفارشات : @ViewData["AllOrders"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کل غذا های سفارش شده : @ViewData["CountOfFoods"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">مبلغ کل دریافتی : @ViewData["OrderBill"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کسانی که از کد تخفیف استفاده کرده اند : @ViewData["CountOfDiscountCodeUsed"]</b></p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد سفارشات امروز : @ViewData["NewOrderCount"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">مبلغ کل دریافتی امروز : @ViewData["OrderBillToday"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کسانی که امروز از کد تخفیف استفاده کرده اند : @ViewData["CountOfDiscountCodeUsedToday"]</b></p>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="panel panel-info">
+            <div class="panel-heading">کاربران</div>
+            <div class="panel-body">
+                <table class="table table-condensed table-responsive">
+                    <tr>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کل کاربران : @ViewData["AllUsers"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد ادمین : @ViewData["CountOfAdmins"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کاربران : @ViewData["CountOfUsers"]</b></p>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <hr /><h3 class="text-danger">تحویل غذا</h3><hr />
+        <div class="panel panel-info">
+            <div class="panel-heading">پیک</div>
+            <div class="panel-body">
+                <table class="table table-condensed table-responsive">
+                    <tr>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کل ارسالی : @ViewData["CountOfCourier"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد ارسالی امروز : @ViewData["CountOfCourierToday"]</b></p>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="panel panel-info">
+            <div class="panel-heading">رزرو میز و صندلی</div>
+            <div class="panel-body">
+                <table class="table table-condensed table-responsive">
+                    <tr>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کل رزرو : @ViewData["CountOfRestaurantTable"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد رزرو امروز : @ViewData["CountOfRestaurantTableToday"]</b></p>
+                        </th>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="panel panel-info">
+            <div class="panel-heading">تحویل در رستوران</div>
+            <div class="panel-body">
+                <table class="table table-condensed table-responsive">
+                    <tr>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد کل تحویل در رستوران : @ViewData["CountOfGetInPlace"]</b></p>
+                        </th>
+                        <th>
+                            <p class="text-danger">| <b class="text-info">تعداد تحویل در رستوران امروز : @ViewData["CountOfGetInPlaceToday"]</b></p>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+

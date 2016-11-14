@@ -1,0 +1,155 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.OrderList>
+@{
+    ViewBag.Title = "بازنگری";
+}
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        بازنگری
+    </div>
+</div>
+<hr />
+@if (ViewData["Message"] == null)
+{
+<div class="panel panel-info">
+    <div class="panel-heading">
+        سفارش ها
+    </div>
+    <div class="panel-body">
+        
+        <table class="table table-hover table-condensed table-responsive">
+            <tr class="active">
+                <th>
+                    نام غذا
+                </th>
+                <th>
+                    تعداد
+                </th>
+                <th>
+                    تاریخ
+                </th>
+                <th>
+                    توضیحات
+                </th>
+                <th>
+                    قیمت هر کدام
+                </th>
+                <th>
+                    وضیعت پرداخت
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Food.Name)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FoodCount)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderDate)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Note)
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Food.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsPay)
+                    </td>
+                </tr>
+            }
+        </table>
+        
+    </div>
+</div>
+<hr />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        نحوه دریافت سفارش
+    </div>
+    <div class="panel-body">
+        <b>@ViewData["Message_Way"]</b>
+    </div>
+</div>
+<hr />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        کد تخفیف
+    </div>
+    <div class="panel-body">
+        @if (ViewData["Status_DiscountCode"] == "1")
+        {
+            <p class="text-success">@ViewData["Message_DiscountCode"]</p>
+                <hr />
+        }
+        else if (ViewData["Status_DiscountCode"] == "2")
+        {
+            <p class="text-danger">کد تخفیف نادرست می باشد!</p>
+                <hr />
+        }
+
+
+        <form action="/Order/Check" method="post" class="form-inline">
+            @Html.AntiForgeryToken()
+            کد تخفیف :
+            @if (ViewData["DiscountCode"] == null)
+            {
+                <input type="text" name="DiscountCode" value="@ViewData["Discountcode"]" placeholder="کد تخفیف" class="form-control" />
+                    <input type="submit" value="تایید" class="btn btn-success" />
+
+                    <input type="hidden" name="dateTime" value="@ViewData["dateTime"]" />
+                    <input type="hidden" name="Way" value="@ViewData["Way"]" />
+                    <input type="hidden" name="Message_Way" value="@ViewData["Message_Way"]" />
+                    <input type="hidden" name="UserAddressId" value="@ViewData["UserAddressId"]" />
+                    <input type="hidden" name="RestaurantTableCount" value="@ViewData["RestaurantTableCount"]" />
+            }
+            else
+            {
+                <b class="text-primary">@ViewData["DiscountCode"]</b>
+            }
+        </form>
+
+    </div>
+</div>
+<hr />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        پرداخت
+    </div>
+    <div class="panel-body">
+        <div>
+            مجموع قیمت : @ViewData["SumPrice"]
+            @if (ViewData["DiscountCode"] != null)
+            {
+                <div>
+                    مجموع قیمت با احتساب کد تخفیف : @ViewData["SumPrice_DiscountCode"]
+                </div>
+            }
+        </div>
+        <hr />
+        <form action="/Order/Pay" method="post">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="DiscountCode" value="@ViewData["DiscountCode"]" />
+            <input type="hidden" name="dateTime" value="@ViewData["dateTime"]" />
+            <input type="hidden" name="Way" value="@ViewData["Way"]" />
+            <input type="hidden" name="UserAddressId" value="@ViewData["UserAddressId"]" />
+            <input type="hidden" name="RestaurantTableCount" value="@ViewData["RestaurantTableCount"]" />
+            <input type="submit" value="تایید و پرداخت" class="btn btn-success" />
+        </form>
+        
+    </div>
+    
+</div>
+}else
+{
+   <h2 class="text-danger">@ViewData["Message"]</h2>
+}

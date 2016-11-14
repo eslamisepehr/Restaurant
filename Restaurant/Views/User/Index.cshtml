@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "پنل کاربری";
+}
+
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        پنل کاربری
+    </div>
+    <div class="panel-body">
+        <table class="table table-condensed table-responsive">
+            <tr>
+                <th>
+                    <form action="/User/Order" method="post">
+                        <input type="image" alt="Submit" src="~/Content/Image/Panel/Order-0.png" />
+                        <p>سبد خرید</p>
+                    </form>
+                </th>
+
+                <th>
+                    <form action="/User/Track" method="post">
+                        <input type="image" alt="Submit" src="~/Content/Image/Panel/Track.png" />
+                        <p>پیگیری سفارشات</p>
+                    </form>
+                </th>
+
+            </tr>
+        </table>
+
+    </div>
+</div>
+

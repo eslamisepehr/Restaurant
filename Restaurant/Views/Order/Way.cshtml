@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "دریافت محصول";
+}
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        نحوه دریافت سفارش
+    </div>
+    <div class="panel-body">
+        <div class="text-center">
+            <br />
+            <form action="~/Order/Courier" method="post" class="form-inline col-lg-4">
+                @Html.AntiForgeryToken()
+                <input type="submit" value="درخواست پیک" class="btn btn-success" />
+            </form>
+            <form action="~/Order/ReserveTable" method="post" class="form-inline col-lg-4">
+                @Html.AntiForgeryToken()
+                <input type="submit" value="رزرو میز و صندلی" class="btn btn-success" />
+            </form>
+            <form action="~/Order/GetInPlace" method="post" class="form-inline col-lg-4">
+                @Html.AntiForgeryToken()
+                <input type="submit" value="دریافت در رستوران" class="btn btn-success" />
+            </form>
+            <hr />
+        </div>
+    </div>
+</div>

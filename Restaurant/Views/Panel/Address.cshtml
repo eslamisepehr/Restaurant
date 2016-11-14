@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.UserAddress>
+@{
+    ViewBag.Title = "آدرس ها";
+}
+<hr />
+<div class="panel-heading text-center border_Title_Basket">
+    آدرس ها
+</div>
+<hr />
+@foreach (var item in Model)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            آدرس
+        </div>
+        <div class="panel-body">
+            <div class="panel-body">
+                <table class="table table-condensed table-responsive">
+                    <tr class="active">
+                        <th>
+                            آدرس
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Place)
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table table-condensed table-responsive">
+                    <tr class="active">
+                        <th>
+                            واحد
+                        </th>
+                        <th>
+                            طبقه
+                        </th>
+                        <th>
+                            پلاک
+                        </th>
+                        <th>
+                            شماره تماس
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Unit)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Floor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telephone)
+                        </td>
+                        <td>
+                            @Html.ActionLink("ویرایش", "EditAddress", new { id = item.Id })
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+}
+<hr />
+<div class="panel panel-default">
+    <div class="panel-heading">
+        @Html.ActionLink("افزودن آدرس جدید", "CreateAddress")
+        @*<form action="~/Panel/CreateAddress" method="post">
+            <input type="submit" value="افزودن آدرس جدید" class="btn btn-link" />
+        </form>*@
+    </div>
+</div>

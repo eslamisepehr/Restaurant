@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Restaurant.Models.Entities.UserAddress>
+@{
+    ViewBag.Title = "پیک";
+}
+<hr />
+<div class="panel-heading text-center border_Title_Basket">
+    درخواست پیک
+</div>
+<hr />
+<div class="panel-heading border_Title_ContactUs text-center">
+    توجه : حداقل 20 دقیقه اضافه بر زمان هم اکنون در قسمت تاریخ و ساعت درج نمایید! در غیر این صورت سفارش شما تایید نخواهد شد!<br />
+    تعداد غذاهای درخواستی بر زمان ارسال سفارش تاثیر گذار است!
+</div>
+<hr />
+@foreach (var item in Model)
+{
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            آدرس
+        </div>
+        <div class="panel-body">
+            <div class="panel-body">
+                <table class="table table-condensed table-responsive">
+                    <tr class="active">
+                        <th>
+                            آدرس
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Place)
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table table-condensed table-responsive">
+                    <tr class="active">
+                        <th>
+                            واحد
+                        </th>
+                        <th>
+                            طبقه
+                        </th>
+                        <th>
+                            پلاک
+                        </th>
+                        <th>
+                            شماره تماس
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Unit)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Floor)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Number)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telephone)
+                        </td>
+                        <td>
+                            @Html.ActionLink("ویرایش", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("حذف", "Delete", new { id = item.Id })
+
+                        </td>
+                    </tr>
+                </table>
+                <hr />
+                <form action="~/Order/Check" method="post" class="form-inline">
+                    @Html.AntiForgeryToken()
+                    @Html.Hidden("UserAddressId", item.Id)
+                    تاریخ و ساعت : <input type="datetime-local" name="dateTime" value="@ViewData["DateTime"]" class="form-control" />
+                    <input type="hidden" name="Way" value="1" />
+                    <input type="submit" value="درخواست" class="btn btn-success" />
+                </form>
+                <hr />
+                <p class="text-info">تاریخ و ساعت هم اکنون : @(DateTime.Now)</p>
+                <p class="text-primary">تاریخ و ساعت پیشنهادی : @((DateTime.Now).AddMinutes(20))</p>
+            </div>
+        </div>
+    </div>
+}
+<hr />
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <form action="~/Panel/CreateAddress" method="get">
+            <input type="submit" value="افزودن آدرس جدید" class="btn btn-link" />
+        </form>
+    </div>
+</div>

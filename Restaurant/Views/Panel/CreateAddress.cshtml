@@ -1,0 +1,67 @@
+﻿@model Restaurant.Models.Entities.OrderStatu
+
+@{
+    ViewBag.Title = "جدید";
+}
+
+<hr />
+<div class="panel">
+    <div class="panel-heading text-center border_Title_Basket">
+        آدرس ها
+    </div>
+    <div class="panel-body">
+        <h2>جدید</h2>
+        <hr />
+        <form action="/Panel/CreateAddress" method="post">
+            @Html.AntiForgeryToken()
+            <dl class="dl-horizontal">
+                <dt>
+                    آدرس :
+                </dt>
+
+                <dd>
+                    <textarea name="Place" class="form-control" rows="5"></textarea>
+                </dd>
+
+                <dt>
+                    پلاک :
+                </dt>
+                    
+                <dd>
+                    <input type="text" class="form-control" name="Number" value="" />
+                </dd>
+
+                <dt>
+                    واحد :
+                </dt>
+
+                <dd>
+                    <input type="text" class="form-control" name="Unit" value="" />
+                </dd>
+
+                <dt>
+                    طبقه :
+                </dt>
+
+                <dd>
+                    <input type="text" class="form-control" name="Floor" value="" />
+                </dd>
+
+                <dt>
+                    شماره تماس :
+                </dt>
+
+                <dd>
+                    <input type="text" class="form-control" name="Telephone" value="" />
+                </dd>
+
+                <dd>
+                    <br />
+                    <input type="submit" value="جدید" class="btn btn-lg btn-success" />
+                </dd>
+
+
+            </dl>
+        </form>
+    </div>
+</div>
